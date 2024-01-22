@@ -1,0 +1,41 @@
+version: '3.1'
+intents:
+- affirm
+- bot_challenge
+- courses
+- deny
+- goodbye
+- greet
+- identify_hostel
+- timings
+responses:
+  utter_timings:
+  - text: The central library opens at 9am and closes at 11pm on weekdays,and closes at 5pm on the weekends.However, we have a reading hall next to the library which  runs 24*7
+  utter_girlshostel:
+  - text: Yes, H10,H11 and H15 are girls hostels.
+  utter_more:
+  - text: Is there anything else I can help you with ?
+  utter_firstsem:
+  - text: "'CS101,PH117(physics lab),CH107,CH105,DIC,MA109,MA110'"
+  utter_greet:
+  - text: Hello ! I'm dosthi, a chatbot powered by the THP Team of IIT Bombay.I can answer all your queries related to the institute.What can I help you with ?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+actions:
+- utter_firstsem
+- utter_girlshostel
+- utter_timings
+- utter_greet
+- utter_more
+- utter_goodbye
+- hostel_identify
+entities:
+- hostel_number
+- gender
